@@ -1,0 +1,62 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your API Title",
+        "description": "API description",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/releve-quotidiens": {
+            "post": {
+                "summary": "Store a new releve quotidien",
+                "operationId": "3c4f6db730a11e424c9fb09b8a33238e",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "vehicule_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "chauffeur_id": {
+                                        "type": "integer",
+                                        "example": 2
+                                    },
+                                    "date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2023-11-24"
+                                    },
+                                    "kilometrage": {
+                                        "type": "integer",
+                                        "example": 12345
+                                    },
+                                    "carburant": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 50.25
+                                    },
+                                    "preuve": {
+                                        "type": "string",
+                                        "example": "image.jpg",
+                                        "nullable": true
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Releve Quotidien created successfully"
+                    },
+                    "422": {
+                        "description": "Validation errors"
+                    }
+                }
+            }
+        }
+    }
+}
